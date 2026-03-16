@@ -2,11 +2,95 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="关于我">
-	<h1>关于我</h1>
-	<p>这是我的个人介绍页面。</p>
-	<p>我正在学习 Astro，并且已经成功上线了我的第一个网站！</p>
-    
-    <!-- 练习：在这里试着放一张你放在 public 文件夹里的图片 -->
-    <img src="/my-avatar.jpg" alt="头像" style="width: 200px; border-radius: 50%;" />
+<Layout title="关于我 | 我的 Astro 实验站">
+	<section class="about-container">
+		<!-- 左侧：文字介绍 -->
+		<div class="about-text">
+			<h2>你好，我是小王 👋</h2>
+			<p>
+				我是一名正在探索 Web 开发世界的学习者。通过 Astro 和 GitHub，我建立了自己的第一个自动化部署网站。
+			</p>
+			<p>
+				我不只是在写代码，我是在构建一个属于自己的数字空间。在这里，我记录学习轨迹，分享我的技术心得。
+			</p>
+			<div class="skills">
+				<span class="tag">Astro</span>
+				<span class="tag">JavaScript</span>
+				<span class="tag">GitHub</span>
+				<span class="tag">Vercel</span>
+			</div>
+		</div>
+
+		<!-- 右侧：个人照片 -->
+		<div class="about-image">
+			<img src="/my-avatar.jpg" alt="我的照片" />
+		</div>
+	</section>
+
+	<style>
+		/* 响应式容器：默认是横向排列 (Flex) */
+		.about-container {
+			display: flex;
+			align-items: center;
+			gap: 40px;
+			padding: 40px 0;
+		}
+
+		/* 文字区域占 60% 宽度 */
+		.about-text {
+			flex: 1.5;
+		}
+
+		.about-text h2 {
+			font-size: 2rem;
+			margin-bottom: 20px;
+			color: #333;
+		}
+
+		.about-text p {
+			margin-bottom: 15px;
+			color: #555;
+		}
+
+		/* 标签样式 */
+		.skills {
+			margin-top: 20px;
+			display: flex;
+			gap: 10px;
+			flex-wrap: wrap;
+		}
+
+		.tag {
+			background: #eee;
+			padding: 5px 12px;
+			border-radius: 15px;
+			font-size: 0.85rem;
+			color: #666;
+		}
+
+		/* 图片区域占 40% 宽度 */
+		.about-image {
+			flex: 1;
+			text-align: center;
+		}
+
+		.about-image img {
+			width: 100%;
+			max-width: 300px;
+			border-radius: 20px;
+			box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+			border: 5px solid white;
+		}
+
+		/* 📱 手机端适配：当屏幕小于 768px 时 */
+		@media (max-width: 768px) {
+			.about-container {
+				flex-direction: column-reverse; /* 图片在上，文字在下 */
+				text-align: center;
+			}
+			.skills {
+				justify-content: center;
+			}
+		}
+	</style>
 </Layout>
