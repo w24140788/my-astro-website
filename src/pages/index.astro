@@ -2,7 +2,90 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="首页">
-	<h1>欢迎回来，哈哈！！！</h1>
-	<p>现在的页面结构非常清爽，而且已经同步到了 GitHub。</p>
+<Layout title="首页 | 我的 Astro 实验站">
+	<!-- 英雄区：大标题和背景设计 -->
+	<section class="hero">
+		<h1>👋 你好，我是小王</h1>
+		<p>这是我从零开始，在 GitHub 上构建的第一个 Astro 网站。</p>
+		<div class="cta-buttons">
+			<a href="/about/" class="btn primary">了解更多</a>
+			<a href="https://github.com" target="_blank" class="btn secondary">访问 GitHub</a>
+		</div>
+	</section>
+
+	<!-- 内容展示区 -->
+	<section class="content">
+		<h2>项目特色</h2>
+		<ul>
+			<li>🚀 **极速加载**：Astro 默认生成纯 HTML。</li>
+			<li>🛠️ **自动同步**：每次修改代码都会同步到 Vercel。</li>
+			<li>📱 **简洁设计**：专注内容，拒绝臃肿。</li>
+		</ul>
+	</section>
+
+	<style>
+		/* 英雄区样式 */
+		.hero {
+			padding: 60px 0;
+			text-align: center;
+			background: linear-gradient(135deg, #6e8efb, #a777e3); /* 渐变背景 */
+			color: white;
+			border-radius: 12px;
+			margin-bottom: 40px;
+		}
+		.hero h1 {
+			font-size: 2.5rem;
+			color: white;
+			margin-bottom: 10px;
+		}
+		.hero p {
+			font-size: 1.2rem;
+			opacity: 0.9;
+			margin-bottom: 30px;
+		}
+
+		/* 按钮样式 */
+		.cta-buttons {
+			display: flex;
+			justify-content: center;
+			gap: 15px;
+		}
+		.btn {
+			padding: 10px 25px;
+			border-radius: 25px;
+			text-decoration: none;
+			font-weight: bold;
+			transition: transform 0.2s;
+		}
+		.btn:hover {
+			transform: scale(1.05); /* 鼠标悬停微调放大 */
+		}
+		.primary {
+			background: white;
+			color: #6e8efb;
+		}
+		.secondary {
+			background: rgba(255, 255, 255, 0.2);
+			color: white;
+			border: 1px solid white;
+		}
+
+		/* 下方内容区 */
+		.content h2 {
+			border-left: 4px solid #6e8efb;
+			padding-left: 15px;
+			margin-bottom: 20px;
+		}
+		ul {
+			list-style: none;
+			padding: 0;
+		}
+		li {
+			background: white;
+			padding: 15px;
+			margin-bottom: 10px;
+			border-radius: 8px;
+			box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+		}
+	</style>
 </Layout>
